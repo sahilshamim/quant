@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataTable with Multiple Filters</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 style="display: block; text-align:center;font-family: Arial, Helvetica, sans-serif;">BUSINESS QUANT</h1>
+  <div class="container mt-5">
+    <!--Filter Section-->
+    <div id="filter-section">
+      <div class="row mb-3 filter-line">
+        <div class="col">
+          <label for="filter-metric-0" class="form-label">Metric</label>
+          <select id="filter-metric-0" class="form-select metric-filter" style="width: 100%;">
+            <option value="">select metric</option>
+            <option value="revenue">revenue</option>
+            <option value="fcf">fcf</option>
+            <option value="capex">capex</option>
+            <option value="gp">gp</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="filter-comparison-0" class="form-label">Comparison</label>
+          <select id="filter-comparison-0" class="form-select comparison-filter" style="width: 100%;">
+            <option value="">select comparison</option>
+            <option value="eq">equal to</option>
+            <option value="lt">less than</option>
+            <option value="gt">greater than</option>
+            <option value="lte">less than or equal</option>
+            <option value="gte">greater than or equal</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="filter-value-0" class="form-label">Value</label>
+          <input id="filter-value-0" type="number" class="form-control value-filter" placeholder="Enter value">
+        </div>
+        <div class="col">
+          <label for="filter-unit-0" class="form-label">Unit</label>
+          <select id="filter-unit-0" class="form-select unit-filter" style="width: 100%;">
+            <option value="">select unit</option>
+            <option value="million">million</option>
+            <option value="lakhs">lakhs</option>
+          </select>
+        </div>
+        <div class="col-auto align-self-end">
+          <button class="btn btn-danger remove-filter-btn" style="display: none;">Remove</button>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary mb-3" id="add-filter-btn">Add Filter</button>
+    
+    <!-- DataTable -->
+    <table id="example" class="table table-striped" style="width:100%">
+      <thead>
+        <tr id="table-head"></tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
